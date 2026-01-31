@@ -17,29 +17,44 @@
 
     <!-- Header -->
     <header class="glass-header">
-        <div class="logo-container">
-            <img src="handball_alger_logo_1769688444857.png" alt="Handball Alger Logo" class="logo">
-            <h1>Handball Alger</h1>
+        <div class="header-right">
+            <div class="logo-container" onclick="switchTab('home')" style="cursor: pointer;">
+                <img src="handball_alger_logo_1769688444857.png" alt="Handball Alger Logo" class="logo">
+                <h1>Handball Alger</h1>
+            </div>
         </div>
+
+        <div class="header-center search-container">
+            <i class="fa-solid fa-search search-icon"></i>
+            <input type="text" id="searchInput" placeholder="بحث عن فريق، لاعب، أو بطولة..."
+                oninput="handleSearch(this.value)">
+        </div>
+
         <nav class="main-nav">
+            <button class="nav-btn theme-btn" onclick="toggleTheme()" title="تغيير الوضع">
+                <i class="fa-solid fa-moon" id="themeIcon"></i>
+            </button>
             <button class="nav-btn active" data-tab="home" onclick="switchTab('home')">
                 <i class="fa-solid fa-house"></i>
-                <span>الرئيسية</span>
+                <span class="nav-label">الرئيسية</span>
             </button>
             <button class="nav-btn" data-tab="leagues" onclick="switchTab('leagues')">
                 <i class="fa-solid fa-trophy"></i>
-                <span>البطولات</span>
+                <span class="nav-label">البطولات</span>
             </button>
             <button class="nav-btn" data-tab="standings" onclick="switchTab('standings')">
                 <i class="fa-solid fa-list-ol"></i>
-                <span>الترتيب</span>
+                <span class="nav-label">الترتيب</span>
             </button>
             <button class="nav-btn" data-tab="stats" onclick="switchTab('stats')">
                 <i class="fa-solid fa-chart-bar"></i>
-                <span>إحصائيات</span>
+                <span class="nav-label">إحصائيات</span>
             </button>
         </nav>
     </header>
+
+    <!-- Background Animation Container -->
+    <div id="background-shapes"></div>
 
     <!-- Main Content -->
     <main id="app" class="container">
